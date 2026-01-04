@@ -16,6 +16,7 @@ type CmdFlags struct {
 	List   bool
 }
 
+// the code below will be used to build a command flag for the to do
 func NewCmdFlags() *CmdFlags {
 	cf := CmdFlags{}
 	flag.StringVar(&cf.Add, "add", "", "Add a new todo specify title")
