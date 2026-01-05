@@ -65,7 +65,7 @@ func (todos *Todos) toggle(index int) error {
 	isCompleted := t[index].Completed
 
 	if !isCompleted {
-		completionTime := time.Now()
+		completionTime := time.Now() // here uses time function
 		t[index].CompletedAt = &completionTime
 	}
 	t[index].Completed = !isCompleted
