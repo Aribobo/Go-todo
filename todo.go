@@ -87,7 +87,7 @@ func (todos *Todos) print() {
 	table.SetRowLines(false)
 	table.SetHeaders("#", "Title", "Completed", "Created At", "Completed At")
 	for index, t := range *todos {
-		completed := "❌"
+		completed := "❌" // this is for a non executed to do
 		CompletedAt := ""
 
 		if t.Completed {
