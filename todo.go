@@ -56,7 +56,7 @@ func (todos *Todos) delete(index int) error {
 	*todos = append(t[:index], t[index+1:]...) // here the slice was unpacked after the deletion and repacked a common practice in go
 	return nil
 }
-func (todos *Todos) toggle(index int) error {
+func (todos *Todos) toggle(index int) error { //function to toggle a to do
 	t := *todos
 
 	if err := t.validateIndex(index); err != nil {
