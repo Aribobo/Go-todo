@@ -71,7 +71,7 @@ func (todos *Todos) toggle(index int) error { //function to toggle a to do
 	t[index].Completed = !isCompleted
 	return nil
 }
-func (todos *Todos) edit(index int, title string) error {
+func (todos *Todos) edit(index int, title string) error { //error method was used to get the errors
 	t := *todos
 
 	if err := t.validateIndex(index); err != nil {
