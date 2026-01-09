@@ -21,14 +21,14 @@ type TodoList struct {
 // let create a slice to hold the struct data. . . . this mimics OOP
 //Receiver function plays a lot of roles here
 
-type Todos []TodoList // this is a type slice
+type Todos []TodoList // this is a type slice to hold each indexed todo
 
 // creating . .. . a receiver function that adds title to the todo list
 // pointer will be use to access the Todos
 
 func (todos *Todos) add(title string) {
 	//code below is where create  what is called * struct literal* something that looks like an object as Go is not object oriented
-	todo := TodoList{ // todo is local varriable very common in Go receiver function for effective data manipulation
+	todo := TodoList{ // todo is local varriable very common in Go receiver function for effective data manipulation, over here we create a new todo
 		Title:       title,
 		Completed:   false,
 		CompletedAt: nil,
