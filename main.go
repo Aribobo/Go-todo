@@ -5,7 +5,7 @@ func main() {
 	storage := NewStorsge[Todos]("todo.json")
 	storage.Load(&todos)
 	CmdFlags := NewCmdFlags()
-	CmdFlags.Execute(&todos)
+	CmdFlags.execute(&todos)
 	// todos.add("buy milk")  //adds a todo to the empty todo list
 	// todos.add("buy bread") //adds another todo list
 	// fmt.Printf("%+v\n\n", todos) //to print out the to do information

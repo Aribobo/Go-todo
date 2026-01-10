@@ -17,7 +17,7 @@ type CmdFlags struct {
 }
 
 // the code below will be used to build a command flag for the to do
-func NewCmdFlags() *CmdFlags {
+func NewCmdFlags() *CmdFlags { // this function will will return to CmdFlags pointer
 	cf := CmdFlags{}
 	flag.StringVar(&cf.Add, "add", "", "Add a new todo specify title")
 	flag.StringVar(&cf.Edit, "edit", "", "Edit a new todo  by index & specify  a new title. id:new_title")
@@ -29,11 +29,11 @@ func NewCmdFlags() *CmdFlags {
 
 	return &cf
 }
-func (cf *CmdFlags) Execute(todos *Todos) {
+func (cf *CmdFlags) execute(todos *Todos) {
 
 	switch {
 	case cf.List:
-		todos.print()
+		todos.display()
 	case cf.Add != "":
 		todos.add(cf.Add)
 	case cf.Edit != "":

@@ -53,7 +53,7 @@ func (todos *Todos) delete(index int) error {
 	if err := t.validateIndex(index); err != nil {
 		return err
 	}
-	*todos = append(t[:index], t[index+1:]...) // here the slice was unpacked after the deletion and repacked a common practice in go
+	*todos = append(t[:index], t[index+1:]...) // here the slice was unpacked after the deletion and repacked a common practice in go a standard Go pattern to delete things
 	return nil
 }
 func (todos *Todos) toggle(index int) error { //function to toggle a to do
@@ -70,7 +70,7 @@ func (todos *Todos) toggle(index int) error { //function to toggle a to do
 	}
 	t[index].Completed = !isCompleted
 	return nil
-}
+} //edit(arguements) what is inside the bracket after the function name is argument
 func (todos *Todos) edit(index int, title string) error { //error method was used to get the errors
 	t := *todos
 
@@ -82,8 +82,8 @@ func (todos *Todos) edit(index int, title string) error { //error method was use
 	return nil
 }
 
-func (todos *Todos) print() {
-	table := table.New(os.Stdout)
+func (todos *Todos) display() {
+	table := table.New(os.Stdout) // os.Stdout → means “print to the terminal”
 	table.SetRowLines(false)
 	table.SetHeaders("#", "Title", "Completed", "Created At", "Completed At")
 	for index, t := range *todos {
@@ -93,10 +93,10 @@ func (todos *Todos) print() {
 		if t.Completed {
 			completed = "✅"
 			if t.CompletedAt != nil {
-				CompletedAt = t.CompletedAt.Format(time.RFC1123)
+				CompletedAt = t.CompletedAt.Format(time.RFC1123) //RFC1123 → standard human-friendly time format
 			}
 		}
-		table.AddRow(strconv.Itoa(index), t.Title, completed, t.CreatedAt.Format(time.RFC1123), CompletedAt)
+		table.AddRow(strconv.Itoa(index), t.Title, completed, t.CreatedAt.Format(time.RFC1123), CompletedAt) // strconv.Itoa(index) → converts the integer to a string, because table cells need text
 	}
 	table.Render()
 }

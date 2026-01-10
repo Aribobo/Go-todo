@@ -14,7 +14,7 @@ func NewStorsge[T any](fileName string) *Storage[T] {
 }
 
 func (s *Storage[T]) Save(data T) error {
-	fileData, err := json.MarshalIndent(data, "", "    ")
+	fileData, err := json.MarshalIndent(data, "", "    ") // indent make it look  nice
 
 	if err != nil {
 		return err
