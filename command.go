@@ -34,7 +34,7 @@ func (cf *CmdFlags) execute(todos *Todos) {
 	switch {
 	case cf.List:
 		todos.display()
-	case cf.Add != "":
+	case cf.Add != "": // for add comand if the field isnot empty
 		todos.add(cf.Add)
 	case cf.Edit != "":
 		parts := strings.SplitN(cf.Edit, ":", 2)
@@ -53,7 +53,7 @@ func (cf *CmdFlags) execute(todos *Todos) {
 		todos.toggle(cf.Toggle)
 
 	case cf.Del != -1:
-		todos.delete(cf.Del)
+		todos.delete(cf.Del) // to execute a delete operation
 
 	default:
 		fmt.Println("Invalid command")
