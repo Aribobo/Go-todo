@@ -7,14 +7,26 @@
     },
     {
         "Title": "buy bread",
-        "Completed": false,
+        "Completed": true,
         "CreatedAt": "2026-01-02T15:05:37.361981155+01:00",
-        "CompletedAt": "2026-01-02T15:05:37.361981482+01:00"
+        "CompletedAt": "2026-01-13T09:09:12.331488776+01:00"
     },
     {
         "Title": " go for a run",
         "Completed": true,
         "CreatedAt": "2026-01-02T21:22:47.273835233+01:00",
         "CompletedAt": "2026-01-02T21:25:43.422587393+01:00"
+    },
+    {
+        "Title": "play",
+        "Completed": false,
+        "CreatedAt": "2026-01-13T09:11:37.815784459+01:00",
+        "CompletedAt": null
+    },
+    {
+        "Title": "jumping jabs",
+        "Completed": false,
+        "CreatedAt": "2026-01-13T09:12:31.869990612+01:00",
+        "CompletedAt": null
     }
 ]

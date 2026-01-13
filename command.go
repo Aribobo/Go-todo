@@ -17,8 +17,8 @@ type CmdFlags struct {
 }
 
 // the code below will be used to build a command flag for the to do
-func NewCmdFlags() *CmdFlags { // this function will will return to CmdFlags pointer
-	cf := CmdFlags{}
+func NewCmdFlags() *CmdFlags { // ✅ Constructor (or factory function) Baby meaning:“A function whose job is to create and return something.”
+	cf := CmdFlags{} // left empty because the value will come from the command line prompts
 	flag.StringVar(&cf.Add, "add", "", "Add a new todo specify title")
 	flag.StringVar(&cf.Edit, "edit", "", "Edit a new todo  by index & specify  a new title. id:new_title")
 	flag.IntVar(&cf.Del, "del", -1, "specify  a todo by index to delete")

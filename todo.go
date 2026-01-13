@@ -26,8 +26,8 @@ type Todos []TodoList // this is a type slice to hold each indexed todo
 // creating . .. . a receiver function that adds title to the todo list
 // pointer will be use to access the Todos
 
-func (todos *Todos) add(title string) {
-	//code below is where create  what is called * struct literal* something that looks like an object as Go is not object oriented
+func (todos *Todos) add(title string) { //A struct literal is how Go lets you create a struct and give its fields values at the same time.
+	//code below is where create  what is called * struct literal* something that looks like an object as Go is not object oriented used to asign value to the struct
 	todo := TodoList{ // todo is local varriable very common in Go receiver function for effective data manipulation, over here we create a new todo
 		Title:       title,
 		Completed:   false,
@@ -70,7 +70,7 @@ func (todos *Todos) toggle(index int) error { //function to toggle a to do
 	}
 	t[index].Completed = !isCompleted
 	return nil
-} //edit(arguements) what is inside the bracket after the function name is argument
+} //edit(parameters) what is inside the bracket after the function name is argument, they are inputs to the fuction, the become argument when the inputs are given to it to execute
 func (todos *Todos) edit(index int, title string) error { //error method was used to get the errors
 	t := *todos
 

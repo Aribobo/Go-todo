@@ -13,7 +13,7 @@ func NewStorsge[T any](fileName string) *Storage[T] {
 	return &Storage[T]{FileName: fileName}
 }
 
-func (s *Storage[T]) Save(data T) error {
+func (s *Storage[T]) Save(data T) error { // this function is used to save to the storage
 	fileData, err := json.MarshalIndent(data, "", "    ") // indent make it look  nice
 
 	if err != nil {
