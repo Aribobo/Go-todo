@@ -21,9 +21,9 @@ type TodoList struct {
 // let create a slice to hold the struct data. . . . this mimics OOP
 //Receiver function plays a lot of roles here
 
-type Todos []TodoList // this is a type slice to hold each indexed todo
+type Todos []TodoList // value of Todos becomes a slice using TodoList structure as a blueprint, now each todo list is stored in a slice indexed
 
-// creating . .. . a receiver function that adds title to the todo list
+// creating . .. . a receiver function that adds value to the TodoList Struct .... actually the function creates a todolist
 // pointer will be use to access the Todos
 
 func (todos *Todos) add(title string) { //A struct literal is how Go lets you create a struct and give its fields values at the same time.
